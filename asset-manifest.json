@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/triade/static/css/main.8fb4c705.css",
+    "main.css": "/triade/static/css/main.e6aff498.css",
     "main.js": "/triade/static/js/main.255e0023.js",
     "static/js/787.7a4cc85d.chunk.js": "/triade/static/js/787.7a4cc85d.chunk.js",
     "index.html": "/triade/index.html",
-    "main.8fb4c705.css.map": "/triade/static/css/main.8fb4c705.css.map",
+    "main.e6aff498.css.map": "/triade/static/css/main.e6aff498.css.map",
     "main.255e0023.js.map": "/triade/static/js/main.255e0023.js.map",
     "787.7a4cc85d.chunk.js.map": "/triade/static/js/787.7a4cc85d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8fb4c705.css",
+    "static/css/main.e6aff498.css",
     "static/js/main.255e0023.js"
   ]
 }
