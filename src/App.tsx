@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { pickNote } from "./notes";
 
-function App() {
+import "./App.css";
+
+const App = () => {
+  const [note, setNote] = useState(pickNote());
+  const [bpm, setBPM] = useState(60);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNote(pickNote());
+    }, Math.floor((60 / bpm) * 1000));
+    return () => clearInterval(interval);
+  }, [bpm]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <label htmlFor="bpm">
+          <input
+            className="bpm"
+            name="bpm"
+            type="number"
+            placeholder={bpm.toString()}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              e.preventDefault();
+              if (e.target.value.trim() != "") {
+                const beat = parseInt(e.target.value);
+                if (beat > 0) {
+                  setBPM(beat);
+                }
+              }
+            }}
+          />
+        </label>
+
+        <div className="App-link">{note}</div>
       </header>
     </div>
   );
-}
+};
 
 export default App;
